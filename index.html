@@ -86,7 +86,7 @@
             });
 
             $('#datetimepicker1').on('dp.change', function (e){
-              var url = 'http://openapi.ro/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
+              var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
 
               $.getJSON( url, function( data ) {
                   $("#data").text(data)
