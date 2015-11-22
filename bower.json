@@ -1,0 +1,23 @@
+{
+  "name": "valutar",
+  "authors": [
+    "Ioan Eugen Stan <ieugen@netdava.com>"
+  ],
+  "description": "Show past currency exchanges - usefull for accounting",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "valutar.nedtava.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "react": "~0.14.3",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37"
+  }
+}
