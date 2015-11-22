@@ -54,8 +54,8 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div id="data">
-          </div>
+          <pre id="data">
+          </pre>
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@
               var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
 
               $.getJSON( url, function( data ) {
-                  $("#data").text(data)
+                $("#data").text(JSON.stringify(data,null, 4))
               });
             })
         });
