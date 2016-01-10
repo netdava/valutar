@@ -49,7 +49,7 @@
           <div class="form-group">
             <label for="date">Data curs</label>
             <input type="text" class="form-control" id="currency-date" placeholder="dd/mm/yyyy or dd.mm.yyyy">
-          </div>          
+          </div>
         </form>
       </div>
     </div>
@@ -101,7 +101,7 @@
         format: 'dd/mm/yyyy',
         endDate: '0d'
       }).on('changeDate', function(e) {
-        var url = 'https://valutar.netdava.com/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
+        var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
         $.getJSON(url, function(data) {
           $("#EUR").text(data.rate.EUR);
           $("#USD").text(data.rate.USD);
