@@ -66,15 +66,15 @@
           <tbody>
             <tr>
               <td> EUR </td>
-              <td id="EUR"> </td>
+              <td> <input id="EUR" type="text"  readonly selected name="eur"></td>
             </tr>
             <tr>
               <td> USD </td>
-              <td id="USD"> </td>
+              <td> <input id="USD" type="text"  readonly selected  name="usd"></td>
             </tr>
             <tr>
               <td> GBP </td>
-              <td id="GBP"> </td>
+              <td> <input id="GPB" type="text" readonly selected name="gbp"></td>
             </tr>
           </tbody>
         </table>
@@ -107,6 +107,10 @@
   </script>
   <script type="text/javascript">
     $(document).ready(function() {
+
+      $("input[type='text']").on("click", function () {
+         $(this).select();
+      });
 
       $('#currency-date').datepicker({
         format: 'dd/mm/yyyy',
