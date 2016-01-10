@@ -119,9 +119,9 @@
       }).on('changeDate', function(e) {
         var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
         $.getJSON(url, function(data) {
-          $("#EUR").text(data.rate.EUR);
-          $("#USD").text(data.rate.USD);
-          $("#GBP").text(data.rate.GBP);
+          $("#EUR").val(data.rate.EUR);
+          $("#USD").val(data.rate.USD);
+          $("#GBP").val(data.rate.GBP);
         });
       })
     })
