@@ -38,71 +38,96 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="date">Data curs</label>
-            <input type="text" class="form-control" id="currency-date"
-                    placeholder="zz/ll/aaaa ">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Aflați cursul valutar trecut</div>
+          <div class="panel-body">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="date">Data</label>
+                <input type="text" class="form-control" id="currency-date" placeholder="zz/ll/aaaa ">
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-striped table-hover">
-          <thead>
-            <th> Valută </th>
-            <th> Curs </th>
-          </thead>
-          <tbody>
-            <tr>
-              <td> EUR </td>
-              <td> <input id="EUR" type="text"  readonly selected name="eur"></td>
-            </tr>
-            <tr>
-              <td> USD </td>
-              <td> <input id="USD" type="text"  readonly selected  name="usd"></td>
-            </tr>
-            <tr>
-              <td> GBP </td>
-              <td> <input id="GBP" type="text" readonly selected name="gbp"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-          <div class="alert alert-info" role="alert">
-            <strong>Notă</strong> Puteți folosi separator liniuța (-), punctul (.),
-              linie inclinata (/) sau nimic pentru a separa zilele de luna si an.
-          </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-          <div class="alert alert-info" role="alert">
-            <strong>Notă</strong> Valoare este selectată automat la click pentru
-            a facilita copierea. Folosiți CTRL+C pentru a copia și CTRL+V pentru a lipi.
-          </div>
-      </div>
-    </div>
 
+          <table class="table table-striped table-hover">
+            <thead>
+              <th> Valută </th>
+              <th> Curs </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td> EUR </td>
+                <td>
+                  <input id="EUR" type="text" readonly selected name="eur">
+                </td>
+              </tr>
+              <tr>
+                <td> USD </td>
+                <td>
+                  <input id="USD" type="text" readonly selected name="usd">
+                </td>
+              </tr>
+              <tr>
+                <td> GBP </td>
+                <td>
+                  <input id="GBP" type="text" readonly selected name="gbp">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Informații</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              Acest serviciu software este destinat contabililor pentru a-i ajuta la completarea declarațiilor fiscale ce necesită cunoașterea cursului valutar trecut.
+            </p>
+            <p>
+              Un exemplu de asemenead declarație este
+              <a href="https://static.anaf.ro/static/10/Anaf/Declaratii_R/390.html">
+                            D390
+                          </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Note</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              Puteți folosi separator liniuța (-), punctul (.), linie inclinata (/) sau nimic pentru a separa zilele de luna si an.
+            </p>
+            <p>
+              Valoare este selectată automat la click pentru a facilita copierea. Folosiți CTRL+C pentru a copia și CTRL+V pentru a lipi.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
-          <p class="text-muted">Un produs &copy;
-            <a href="https://netdava.com/">netdava.com</a>
+          <p class="text-muted">Un produs
+            <a href="https://netdava.com/">netdava.com</a>.
+            Toate drepturile rezervate.
           </p>
         </div>
         <div class="col-xs-6">
           <a href='http://openapi.ro'>
-            <img src='http://openapi.ro/oa-logo.png' width='82' height='38'
-                 alt='OpenAPI.ro - servicii web pentru România' />
+            <img src='http://openapi.ro/oa-logo.png' width='82' height='38' alt='OpenAPI.ro - servicii web pentru România' />
           </a>
         </div>
       </div>
@@ -119,8 +144,8 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-      $("input[type='text']").on("click", function () {
-         $(this).select();
+      $("input[type='text']").on("click", function() {
+        $(this).select();
       });
 
       $('#currency-date').datepicker({
