@@ -1,0 +1,9 @@
+= Netdava.com website
+Ioan Eugen Stan <ieugen@netdava.com>
+2016-01-10
+
+== Deployment
+
+----
+  ssh netdava.com "cd valutar && git pull && bower install"
+----
