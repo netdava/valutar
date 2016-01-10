@@ -71,10 +71,9 @@
               <td id="USD"> </td>
             </tr>
             <tr>
-              <td> GPB </td>
-              <td id="GPB"> </td>
+              <td> GBP </td>
+              <td id="GBP"> </td>
             </tr>
-
           </tbody>
         </table>
       </div>
@@ -99,13 +98,14 @@
 
       $('#currency-date').datepicker({
         format: 'dd/mm/yyyy',
-        endDate: '0d'
+        endDate: '0d',
+        autoclose: true
       }).on('changeDate', function(e) {
         var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
         $.getJSON(url, function(data) {
           $("#EUR").text(data.rate.EUR);
           $("#USD").text(data.rate.USD);
-          $("#GPB").text(data.rate.GPB);
+          $("#GBP").text(data.rate.GBP);
         });
       })
     })
