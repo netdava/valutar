@@ -23,7 +23,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -142,6 +141,20 @@
   <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js">
   </script>
   <script type="text/javascript">
+    function toFixed(value, precision) {
+        var precision = precision || 0,
+            power = Math.pow(10, precision),
+            absValue = Math.abs(Math.round(value * power)),
+            result = (value < 0 ? '-' : '') + String(Math.floor(absValue / power));
+
+        if (precision > 0) {
+            var fraction = String(absValue % power),
+                padding = new Array(Math.max(precision - fraction.length, 0) + 1).join('0');
+            result += '.' + padding + fraction;
+        }
+        return result;
+    }
+
     $(document).ready(function() {
 
       $("input[type='text']").on("click", function() {
@@ -155,12 +168,20 @@
       }).on('changeDate', function(e) {
         var url = '/api/exchange/all.json?date=' + moment(e.date).format('YYYY-MM-DD');
         $.getJSON(url, function(data) {
-          $("#EUR").val(data.rate.EUR);
-          $("#USD").val(data.rate.USD);
-          $("#GBP").val(data.rate.GBP);
+          $("#EUR").val(toFixed(data.rate.EUR, 4));
+          $("#USD").val(toFixed(data.rate.USD, 4));
+          $("#GBP").val(toFixed(data.rate.GBP, 4));
         });
       })
     })
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-72326280-2', 'auto');
+    ga('send', 'pageview');
   </script>
 </body>
 
